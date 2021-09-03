@@ -1,9 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const companyMainControler = require("../controllers/CompanyMainController");
-const snapShotControler = require("../controllers/SnapShotController");
-//test modle
-const snapShotControlerTest = require("../controllers/SnapShotControllerTest");
+const CompanyDetailsController = require("../controllers/CompanyDetailsController");
 
 router.get('/', companyMainControler.baseRoute); 
 router.get('/get-info', companyMainControler.getAllInfo);
@@ -12,23 +10,13 @@ router.put('/update-info/:id', companyMainControler.updateInfo);
 router.get('/get-info-id/:id', companyMainControler.getInfoById);
 router.delete('/remove-info/:id', companyMainControler.deleteInfo);
 
-router.get('/get-snapshot', snapShotControler.getAllSnapShots);
-router.post('/create-snapshot', snapShotControler.createSnapShot);
-router.put('/update-snapshot/:id', snapShotControler.updateSnapShot);
-router.get('/get-snapshot-id/:id', snapShotControler.getSnapShotById);
-router.delete('/remove-snapshot/:id', snapShotControler.deleteSnapShot);
-
 //test route
-router.get('/get-snapshot-test', snapShotControlerTest.getAllSnapShotsTest);
-router.post('/create-snapshot-test', snapShotControlerTest.createSnapShotTest);
-router.put('/update-snapshot-test/:companyId/:employeeId', snapShotControlerTest.updateEmployee);
-router.put('/update-snapshot-test/:companyId', snapShotControlerTest.updateCompany);
-router.get('/get-snapshot-id-test/:id', snapShotControlerTest.getSnapShotByIdTest);
-router.delete('/remove-snapshot-test/:id', snapShotControlerTest.deleteSnapShotTest);
-
-
+router.get('/get-snapshot-test', CompanyDetailsController.getAllCompanyDetails);
+router.get('/get-snapshot-test/:index', CompanyDetailsController.getAllCompanyDetails);
+router.post('/create-snapshot-test', CompanyDetailsController.createCompanyDetails);
+router.put('/update-snapshot-test/:companyId/:employeeId', CompanyDetailsController.updateEmployee);
+router.put('/update-snapshot-test/:companyId', CompanyDetailsController.updateCompany);
+router.get('/get-snapshot-id-test/:companyId', CompanyDetailsController.getCompanyDetailsById);
+router.delete('/remove-snapshot-test/:companyId', CompanyDetailsController.deleteCompanyDt);
 
 module.exports = router;
-
-
-//NOTE correct shap to SNAP

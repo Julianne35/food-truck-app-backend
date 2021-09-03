@@ -1,3 +1,5 @@
+//OLD
+
 const mongoose = require("mongoose");
 const CompanyGenInfo = mongoose.model("company");
 

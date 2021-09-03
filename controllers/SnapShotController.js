@@ -1,3 +1,5 @@
+//OLD 
+
 const mongoose = require("mongoose");
 const CompanyShapShot = mongoose.model("snapshot");
 
@@ -14,8 +16,6 @@ exports.createSnapShot = async (req, res) => {
   console.log(req.body);
   let companySnapShot = new CompanyShapShot({
     company: req.body.company,
-    // details: req.body.details,
-    // name: req.body.name,
     employee: req.body.employee,
     date: req.body.date,
     tax: req.body.tax,

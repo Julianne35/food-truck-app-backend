@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 require('./models/CompanyMain');
 require('./models/CompanySnapshot');
-require('./models/CompanySnapshotTest');
+require('./models/CompanyDetails');
 const app = require("./app");
 
 const mongoURI = 
