@@ -1,5 +1,4 @@
 // IN USE
-// TEST COMMENT 
 const mongoose = require("mongoose");
 const CompanyDetails = mongoose.model("snapshottest");
 
