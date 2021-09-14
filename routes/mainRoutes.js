@@ -17,6 +17,7 @@ router.post('/create-snapshot-test', CompanyDetailsController.createCompanyDetai
 router.put('/update-snapshot-test/:companyId/:employeeId', CompanyDetailsController.updateEmployee);
 router.put('/update-snapshot-test/:companyId', CompanyDetailsController.updateCompany);
 router.get('/get-snapshot-id-test/:companyId', CompanyDetailsController.getCompanyDetailsById);
+router.get('/get-snapshot-id-test/:companyId/:employeeId', CompanyDetailsController.getCompanyDetailsById);
 router.delete('/remove-snapshot-test/:companyId', CompanyDetailsController.deleteCompanyDt);
 
 module.exports = router;

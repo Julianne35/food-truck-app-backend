@@ -40,7 +40,7 @@ exports.createCompanyDetails = async (req, res) => {
   });
 };
 
-//get by id
+//get by company id
 exports.getCompanyDetailsById = async (req, res) => {
   let getSnapShotID = req.params.companyId;
   await CompanyDetails.findById({ _id: getSnapShotID }, (err, data) => {
@@ -61,7 +61,7 @@ exports.getCompanyDetailsById = async (req, res) => {
 //update company name
 exports.updateCompany = async (req, res) => {
   await CompanyDetails.findOneAndUpdate(
-    { _id: req.params.companyId,},
+    { _id: req.params.companyId },
     { $set: req.body },
     (err, data) => {
       if (err) {
@@ -107,7 +107,6 @@ exports.updateEmployee = async (req, res) => {
     }
   );
 };
-
 
 //function to delete info
 exports.deleteCompanyDt = async (req, res) => {
